@@ -43,6 +43,11 @@
   <a class="quick" onclick="promptAccess()">🔑 快速輸入密語</a>
 
   <script>
+    // 自動偵測是否從錯誤網址進入（例如影片1.html）
+    if (window.location.pathname.includes("影片1.html")) {
+      window.location.href = window.location.href.replace("影片1.html", "video1.html");
+    }
+
     function checkPassword() {
       var pw = document.getElementById('password').value;
       if (pw === "0520905") {
@@ -52,14 +57,4 @@
       }
     }
 
-    function promptAccess() {
-      var input = prompt("輸入密語");
-      if (input === "0520905") {
-        window.location.href = "https://youtu.be/1qzWZtcHM5E";
-      } else {
-        alert("錯誤，請再試一次！");
-      }
-    }
-  </script>
-</body>
-</html>
+    function pro
