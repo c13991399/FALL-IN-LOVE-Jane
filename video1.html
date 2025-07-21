@@ -1,7 +1,65 @@
-<script>
-  if (prompt('輸入密語') === '0520905') {
-    location.href = 'https://youtu.be/1qzWZtcHM5E';
-  } else {
-    alert('錯誤');
-  }
-</script>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>婚禮片頭曲</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: "微軟正黑體", sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-left: 10px;
+      background-color: #ff9edb;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    a.quick {
+      display: block;
+      margin-top: 20px;
+      color: #ffdaff;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>婚禮片頭曲</h1>
+  <p>2024.03.15</p>
+  <p>請輸入密碼以觀看影片：</p>
+  <input type="password" id="password" placeholder="輸入密碼" />
+  <button onclick="checkPassword()">確認</button>
+
+  <a class="quick" onclick="promptAccess()">🔑 快速輸入密語</a>
+
+  <script>
+    function checkPassword() {
+      var pw = document.getElementById('password').value;
+      if (pw === "0520905") {
+        window.location.href = "https://www.youtube.com/watch?v=1qzWZtcHM5E";
+      } else {
+        alert("密碼錯誤，請再試一次！");
+      }
+    }
+
+    function promptAccess() {
+      var input = prompt("輸入密語");
+      if (input === "0520905") {
+        window.location.href = "https://youtu.be/1qzWZtcHM5E";
+      } else {
+        alert("錯誤，請再試一次！");
+      }
+    }
+  </script>
+</body>
+</html>
