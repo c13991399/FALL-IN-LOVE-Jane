@@ -1,83 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <title>Fall In Love 密語任務</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('background.gif') no-repeat center center fixed;
-      background-size: cover;
-      font-family: "微軟正黑體", sans-serif;
-      color: #fff;
-      text-align: center;
-    }
-    .container {
-      margin-top: 20vh;
-    }
-    input[type="text"] {
-      padding: 10px;
-      font-size: 18px;
-      border-radius: 5px;
-      border: none;
-      outline: none;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 18px;
-      margin-left: 10px;
-      background-color: #ff9edb;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .hint {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #ffdaff;
-    }
-    .extra-links {
-      margin-top: 40px;
-    }
-    .extra-links a {
-      color: #ffd1f9;
-      text-decoration: none;
-      display: block;
-      margin: 8px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Fall In Love Surprise</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: "Arial", sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f5a623;
+            border: none;
+            cursor: pointer;
+        }
+        .note {
+            color: #ffcc00;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Fall In Love 密語任務</h1>
-    <input type="text" id="codeInput" placeholder="輸入密語" />
-    <button onclick="checkCode()">進入驚喜</button>
-    <div class="hint">提示：date4碼 + 我生日3碼（共7碼）</div>
-
-   <div class="extra-links">
-  <h3>🎬 更多回憶密語：</h3>
-
-  <p style="color: #ffcccc;">📌 請手動將網址改為 video1.html</p>
-  <a href="影片1.html">💍 婚禮片頭曲（輸入密碼）</a>
-      <a href="video2.html">🕊️ 我的18～現在（輸入密碼）</a>
-      <a href="open.html" target="_blank">🎁 正緣驚喜影片（直接開）</a>
+    <div class="container">
+        <h1>🎁 專屬密語任務</h1>
+        <p class="note">請使用合法 App 翻牆工具（VPN 或加密代理）<br>
+        確認要到的網站為 YouTube<br>
+        準備好輸入提示碼：四碼+三碼你猜得出</p>
+        <input type="password" id="passcode" placeholder="請輸入密碼">
+        <button onclick="verify()">進入驚喜</button>
     </div>
-  </div>
-
-  <audio autoplay loop>
-    <source src="love_surprise_bgm.mp3" type="audio/mpeg" />
-  </audio>
-
-  <script>
-    function checkCode() {
-      const input = document.getElementById('codeInput').value;
-      if (input === "0520905") {
-        window.location.href = "success.html";
-      } else {
-        alert("密語錯誤，請再試一次！");
-      }
-    }
-  </script>
+    <script>
+        function verify() {
+            const input = document.getElementById('passcode').value;
+            const correct = "0520905";
+            if (input === correct) {
+                window.location.href = "main.html";
+            } else {
+                alert("密碼錯誤，再試一次哦！");
+            }
+        }
+    </script>
 </body>
 </html>
