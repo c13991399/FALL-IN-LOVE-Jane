@@ -38,9 +38,6 @@
       font-size: 16px;
       color: #ffdaff;
     }
-    audio {
-      display: none;
-    }
     .extra-links {
       margin-top: 40px;
       color: #fff;
@@ -71,8 +68,7 @@
     <h1>Fall In Love 密語任務</h1>
     <input type="text" id="codeInput" placeholder="輸入密語" />
     <button onclick="checkCode()">進入驚喜</button>
-    <div class="hint">提示：日期4碼 + 我生日3碼（共7碼）</div>
-
+    <div class="hint">提示：date4碼 + 我生日3碼（共7碼）</div>
     <div class="extra-links">
       <h3>🎬 更多回憶密語：</h3>
       <ul>
@@ -82,15 +78,13 @@
       </ul>
     </div>
   </div>
-
-  <audio autoplay loop>
-    <source src="love_surprise_bgm.mp3" type="audio/mpeg" />
-  </audio>
-
+  <audio id="bgm" src="love_surprise_bgm.mp3" autoplay muted loop></audio>
   <script>
     function checkCode() {
       const input = document.getElementById('codeInput').value;
       if (input === "0520905") {
+        document.getElementById("bgm").muted = false;
+        document.getElementById("bgm").play();
         window.location.href = "success.html";
       } else {
         alert("密語錯誤，請再試一次！");
