@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>婚禮片頭曲檔名需手動修改video1.html</title>
+  <title>婚禮片頭曲檔名需手動修改 video1.html</title>
   <style>
     body {
       background: #000;
@@ -34,7 +34,7 @@
   </style>
 </head>
 <body>
-  <h1>婚禮片頭曲</h1>
+  <h1>💍 婚禮片頭曲</h1>
   <p>2024.03.15</p>
   <p>請輸入密碼以觀看影片：</p>
   <input type="password" id="password" placeholder="輸入密碼" />
@@ -43,7 +43,7 @@
   <a class="quick" onclick="promptAccess()">🔑 快速輸入密語</a>
 
   <script>
-    // 自動偵測是否從錯誤網址進入（例如影片1.html）
+    // ✅ 自動將影片1.html 導向 video1.html（萬一網址錯誤）
     if (window.location.pathname.includes("影片1.html")) {
       window.location.href = window.location.href.replace("影片1.html", "video1.html");
     }
@@ -57,4 +57,14 @@
       }
     }
 
-    function pro
+    function promptAccess() {
+      var input = prompt("輸入密語");
+      if (input === "0520905") {
+        window.location.href = "https://youtu.be/1qzWZtcHM5E";
+      } else {
+        alert("錯誤，請再試一次！");
+      }
+    }
+  </script>
+</body>
+</html>
